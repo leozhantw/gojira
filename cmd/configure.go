@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"path"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -17,18 +18,13 @@ var configureCmd = &cobra.Command{
 		if _, err := fmt.Scan(&org); err != nil {
 			return err
 		}
+		viper.Set("organization", org)
 
 		home, err := os.UserHomeDir()
 		if err != nil {
 			return err
 		}
-
-		viper.AddConfigPath(home)
-		viper.SetConfigName(".gojira")
-		viper.SetConfigType("yaml")
-
-		viper.Set("organization", org)
-
-		return viper.WriteConfig()
+		filename := path.Join(home, ".gojira.yaml")
+		return viper.WriteConfigAs(filename)
 	},
 }
