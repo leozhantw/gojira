@@ -27,8 +27,8 @@ dockers:
     binaries:
       - gojira
     image_templates:
-      - "leozhantw/gojira:latest"
-      - "leozhantw/gojira:{{ .Tag }}"
+      - "leozhan/gojira:latest"
+      - "leozhan/gojira:{{ .Tag }}"
     build_flag_templates:
       - "--pull"
       - "--label=org.opencontainers.image.created={{.Date}}"
