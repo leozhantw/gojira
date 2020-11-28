@@ -44,4 +44,3 @@ brews:
     folder: Formula
     homepage: "https://github.com/leozhantw/gojira"
     description: "Save your time on Jira operation through the command line."
-    license: "MIT"
