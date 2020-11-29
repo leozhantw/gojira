@@ -28,3 +28,7 @@ var configureCmd = &cobra.Command{
 		return viper.WriteConfigAs(filename)
 	},
 }
+
+func init() {
+	rootCmd.AddCommand(configureCmd)
+}

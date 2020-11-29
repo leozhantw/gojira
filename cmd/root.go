@@ -20,11 +20,6 @@ var (
 		SilenceErrors: true,
 		SilenceUsage:  true,
 	}
-
-	cmds = []*cobra.Command{
-		configureCmd,
-		openCmd,
-	}
 )
 
 func Execute() {
@@ -36,8 +31,6 @@ func Execute() {
 
 func init() {
 	cobra.OnInitialize(initConfig)
-
-	rootCmd.AddCommand(cmds...)
 }
 
 func initConfig() {

@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var openCmd = &cobra.Command{
+var issueOpenCmd = &cobra.Command{
 	Use:   "open",
 	Short: "Open by your default browser",
 	RunE: func(cmd *cobra.Command, args []string) error {
