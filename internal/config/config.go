@@ -7,7 +7,7 @@ import (
 )
 
 type Config struct {
-	Organization string `yaml:"organization"`
+	SiteURL string `yaml:"siteurl"`
 }
 
 func New() (Config, error) {

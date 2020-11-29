@@ -17,5 +17,5 @@ brew install leozhantw/tap/gojira
 Before using the CLI, you need to configure your Jira information through the `gojira configure` command.
 ```shell script
 $ gojira configure
-Organization: MYORGANIZATION
+Your website URL: https://gojira.atlassian.net
 ```
