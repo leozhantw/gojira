@@ -20,6 +20,13 @@ var configureCmd = &cobra.Command{
 		}
 		viper.Set("siteurl", siteURL)
 
+		var token string
+		fmt.Print("Your token: ")
+		if _, err := fmt.Scan(&token); err != nil {
+			return err
+		}
+		viper.Set("token", token)
+
 		home, err := os.UserHomeDir()
 		if err != nil {
 			return err

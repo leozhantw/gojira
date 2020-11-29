@@ -8,6 +8,7 @@ import (
 
 type Config struct {
 	SiteURL string `yaml:"siteurl"`
+	Token   string `yaml:"token"`
 }
 
 func New() (Config, error) {
