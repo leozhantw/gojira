@@ -12,6 +12,7 @@ var issueCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(issueCmd)
 	issueCmd.AddCommand([]*cobra.Command{
+		issueListCmd,
 		issueOpenCmd,
 	}...)
 }
