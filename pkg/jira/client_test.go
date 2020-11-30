@@ -8,6 +8,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 var (
@@ -65,7 +66,8 @@ func TestClient_Do(t *testing.T) {
 
 	req, _ := testClient.NewRequest("GET", "/", nil)
 	got := new(foo)
-	testClient.Do(req, got)
+	_, err := testClient.Do(req, got)
+	require.NoError(t, err)
 
 	want := &foo{"a"}
 	assert.Equal(t, want, got)
