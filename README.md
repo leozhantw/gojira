@@ -1,6 +1,7 @@
 # GoJira
 
 [![Lint](https://github.com/leozhantw/gojira/workflows/Lint/badge.svg)](https://github.com/leozhantw/gojira/actions?query=workflow%3ALint)
+[![Test](https://github.com/leozhantw/gojira/workflows/Test/badge.svg)](https://github.com/leozhantw/gojira/actions?query=workflow%3ATest)
 [![Release](https://img.shields.io/github/v/release/leozhantw/gojira?label=Release)](https://github.com/leozhantw/gojira/releases)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/leozhantw/gojira/blob/master/LICENSE)
 
