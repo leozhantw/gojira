@@ -3,6 +3,7 @@ module github.com/leozhantw/gojira
 go 1.15
 
 require (
+	github.com/olekukonko/tablewriter v0.0.4
 	github.com/pkg/browser v0.0.0-20201112035734-206646e67786
 	github.com/pkg/errors v0.8.1
 	github.com/spf13/cobra v1.1.1
