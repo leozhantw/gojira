@@ -19,4 +19,5 @@ Before using the CLI, you need to configure your Jira information through the `g
 ```shell script
 $ gojira configure
 Your website URL: https://gojira.atlassian.net
+Your token: your-jira-token
 ```
