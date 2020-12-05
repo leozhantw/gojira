@@ -1,4 +1,4 @@
-# GoJira
+# Gojira
 
 [![Lint](https://github.com/leozhantw/gojira/workflows/Lint/badge.svg)](https://github.com/leozhantw/gojira/actions?query=workflow%3ALint)
 [![Test](https://github.com/leozhantw/gojira/workflows/Test/badge.svg)](https://github.com/leozhantw/gojira/actions?query=workflow%3ATest)
