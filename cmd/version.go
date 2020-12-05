@@ -18,10 +18,10 @@ var versionCmd = &cobra.Command{
 	Short: "Print the version number of Gojira",
 	Run: func(cmd *cobra.Command, args []string) {
 		if BuildDate != "" {
-			Version = fmt.Sprintf("%s (%s)", Version, BuildDate)
+			BuildDate = fmt.Sprintf(" (%s)", BuildDate)
 		}
 
-		fmt.Printf("gojira version %s\n%s\n", Version, changelog.GetURL(Version))
+		fmt.Printf("gojira version %s%s\n%s\n", Version, BuildDate, changelog.GetURL(Version))
 	},
 }
 
