@@ -2,9 +2,10 @@ package cmd
 
 import (
 	"fmt"
-	"regexp"
 
 	"github.com/spf13/cobra"
+
+	"github.com/leozhantw/gojira/internal/changelog"
 )
 
 var (
@@ -20,21 +21,10 @@ var versionCmd = &cobra.Command{
 			Version = fmt.Sprintf("%s (%s)", Version, BuildDate)
 		}
 
-		fmt.Printf("gojira version %s\n%s\n", Version, changelogURL())
+		fmt.Printf("gojira version %s\n%s\n", Version, changelog.GetURL(Version))
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(versionCmd)
-}
-
-func changelogURL() string {
-	path := "https://github.com/leozhantw/gojira"
-	r := regexp.MustCompile(`^v?\d+\.\d+\.\d+(-[\w.]+)?$`)
-	if !r.MatchString(Version) {
-		return fmt.Sprintf("%s/releases/latest", path)
-	}
-
-	url := fmt.Sprintf("%s/releases/tag/v%s", path, Version)
-	return url
 }
