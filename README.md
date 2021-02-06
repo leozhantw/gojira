@@ -18,6 +18,14 @@ brew install leozhantw/tap/gojira
 Before using the CLI, you need to configure your Jira information through the `gojira configure` command.
 ```shell script
 $ gojira configure
-Your website URL: https://gojira.atlassian.net
-Your token: your-jira-token
+Your website URL: https://mysite.atlassian.net
+Your account (e.g. me@example.com): me@example.com
+Your API token: your-jira-api-token
 ```
+
+### Create an API token
+Create an API token from your Atlassian account:
+
+1. Log in to https://id.atlassian.com/manage/api-tokens.
+2. Click Create API token.
+3. From the dialog that appears, enter a memorable and concise Label for your token and click Create.

@@ -42,7 +42,7 @@ var issueListCmd = &cobra.Command{
 			jql += fmt.Sprintf(" AND status NOT IN ('%s')", strings.Join(excludeStatus, "','"))
 		}
 
-		client, err := jira.NewClient(cfg.SiteURL, cfg.Token)
+		client, err := jira.NewClient(cfg.SiteURL, cfg.Account, cfg.Token)
 		if err != nil {
 			return err
 		}

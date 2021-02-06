@@ -3,6 +3,7 @@ package jira
 import (
 	"bytes"
 	"context"
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -15,12 +16,13 @@ type Client struct {
 	client *http.Client
 
 	baseURL *url.URL
+	account string
 	token   string
 
 	Issue *IssueService
 }
 
-func NewClient(baseURL, token string) (*Client, error) {
+func NewClient(baseURL, account, token string) (*Client, error) {
 	parsedBaseURL, err := url.Parse(baseURL)
 	if err != nil {
 		return nil, err
@@ -29,6 +31,7 @@ func NewClient(baseURL, token string) (*Client, error) {
 	c := &Client{
 		client:  http.DefaultClient,
 		baseURL: parsedBaseURL,
+		account: account,
 		token:   token,
 	}
 	c.Issue = &IssueService{client: c}
@@ -60,7 +63,10 @@ func (c *Client) NewRequest(method, urlStr string, body interface{}) (*http.Requ
 	}
 
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Add("Authorization", fmt.Sprintf("Basic %s", c.token))
+
+	str := fmt.Sprintf("%s:%s", "leozhan@kkstream.com", c.token)
+	encStr := base64.StdEncoding.EncodeToString([]byte(str))
+	req.Header.Add("Authorization", fmt.Sprintf("Basic %s", encStr))
 
 	return req, nil
 }

@@ -8,6 +8,7 @@ import (
 
 type Config struct {
 	SiteURL string `yaml:"siteurl"`
+	Account string `yaml:"account"`
 	Token   string `yaml:"token"`
 }
 
