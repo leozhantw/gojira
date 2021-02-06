@@ -22,7 +22,7 @@ func setup() {
 	testMux = http.NewServeMux()
 	testServer = httptest.NewServer(testMux)
 
-	testClient, _ = NewClient(testServer.URL, "test-token")
+	testClient, _ = NewClient(testServer.URL, "me@example.com", "test-token")
 }
 
 func teardown() {
